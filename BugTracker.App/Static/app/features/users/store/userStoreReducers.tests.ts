@@ -1,5 +1,6 @@
 import { List } from 'immutable';
 
+import { newGuid } from '../../../tools';
 import { expect, deepFreeze, TestRunnerBase } from "../../../tests.base";
 import { IAction, AppState } from "../../../store/appStore.base";
 import { UserModel } from "../../../store/storeModels";

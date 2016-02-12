@@ -1,11 +1,12 @@
 import { List } from 'immutable';
 
+import { newGuid } from '../../../tools';
 import { IAction, AppState } from "../../../store/appStore.base";
 import { UserModel } from "../../../store/storeModels";
 import { UserStoreActionTypes, IAddUserAction, IRemoveUserAction } from "./userStoreActions";
 
 const addUser = (state: List<UserModel>, action: IAddUserAction): List<UserModel> => {
-    var newState = state.push(new UserModel(action.userName))
+    var newState = state.push(new UserModel(newGuid(), action.userName))
     return newState;
 }
 const removeUser = (state: List<UserModel>, action: IRemoveUserAction): List<UserModel> => {

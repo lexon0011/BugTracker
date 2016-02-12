@@ -6,24 +6,27 @@ import { Record, List } from 'immutable';
 // Otherwise you will face an "Cannot set on an immutable record." error.
 
 const UserModelRecord = Record({
+    uuid: <string>null,
     name: <string>null
 });
 export class UserModel extends UserModelRecord {
+    public uuid:string;
     public name: string;
     
-    constructor(name: string) {
-        super({ name });
+    constructor(uuid:string, name: string) {
+        super({ uuid, name });
     }
 }
 
 const IssueModelRecord = Record({
+    uuid: <string>null,
     title: <string>null
 });
 export class IssueModel extends IssueModelRecord {
     public title: string;
     
-    constructor(title: string) {
-        super({ title });
+    constructor(uuid:string, title: string) {
+        super({ uuid, title });
     }
 }
 

@@ -1,11 +1,12 @@
 import { List } from 'immutable';
 
+import { newGuid } from '../../../tools';
 import { IAction, AppState } from "../../../store/appStore.base";
 import { IssueModel } from "../../../store/storeModels";
 import { IssueStoreActionTypes, IAddIssueAction } from "./issueStoreActions";
 
 const addIssue = (state: List<IssueModel>, action: IAddIssueAction): List<IssueModel> => {
-    var newState = state.push(new IssueModel(action.title))
+    var newState = state.push(new IssueModel(newGuid(), action.title))
     return newState;
 }
 
